@@ -137,6 +137,21 @@ The API includes proper error handling for:
 4. Push to branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+## CI/CD Pipeline Setup
+
+To set up the CI/CD pipeline with Render, follow these steps:
+
+1. Go to your Render dashboard and get your API key.
+2. Add the API key to your GitHub repository secrets:
+   - Go to your repository on GitHub.
+   - Click on `Settings`.
+   - Click on `Secrets` in the left sidebar.
+   - Click on `New repository secret`.
+   - Name the secret `RENDER_API_KEY` and paste your Render API key as the value.
+3. Update the `serviceId` in the GitHub Actions workflow file with your Render service ID.
+
+Now, the CI pipeline will run tests on pull requests to the main branch, and the CD pipeline will automatically deploy the application on merging to the main branch.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
