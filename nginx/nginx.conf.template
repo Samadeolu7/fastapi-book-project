@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name your-domain.com;
+    server_name fastapi-book-project-sx6s.onrender.com;
 
     location / {
         proxy_pass http://$BACKEND_HOST:$BACKEND_PORT;
