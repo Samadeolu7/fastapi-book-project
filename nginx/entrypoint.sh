@@ -1,7 +1,7 @@
 #!/bin/bash
+# Replace env vars in the template to generate the final config.
+envsubst '$BACKEND_HOST $BACKEND_PORT' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
 
-# Replace environment variables in the Nginx configuration file
-envsubst '${BACKEND_HOST} ${BACKEND_PORT}' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
-
-# Start Nginx
+# (Removed uvicorn startup because backend service handles that)
+# Start Nginx in the foreground.
 nginx -g 'daemon off;'
