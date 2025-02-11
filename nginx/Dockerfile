@@ -1,8 +1,8 @@
 # Use the official Nginx image from the Docker Hub
 FROM nginx:latest
 
-# Copy the Nginx configuration file
-COPY nginx.conf /etc/nginx/nginx.conf
+# Copy the Nginx configuration template
+COPY nginx.conf.template /etc/nginx/nginx.conf.template
 
 # Copy the entrypoint script
 COPY entrypoint.sh /etc/nginx/entrypoint.sh

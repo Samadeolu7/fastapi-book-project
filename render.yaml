@@ -1,13 +1,17 @@
 services:
   - type: web
     name: backend
+    repo: https://github.com/Samadeolu7/fastapi-book-project
+    branch: main
+    plan: free
     env: docker
     dockerfilePath: ./Dockerfile.backend
-    healthCheckPath: /health
+    healthCheckPath: /healthcheck
 
   - type: web
     name: nginx
     env: docker
+    repo: https://github.com/Samadeolu7/fastapi-book-project
     dockerfilePath: ./nginx/Dockerfile
     startCommand: /bin/bash /etc/nginx/entrypoint.sh
     envVars:
