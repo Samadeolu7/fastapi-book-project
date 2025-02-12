@@ -1,6 +1,8 @@
 FROM nginx:stable-alpine
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+RUN apk update && apk add bash
+
+COPY nginx.conf /etc/nginx/nginx.conf.template
 
 COPY entrypoint.sh /etc/nginx/entrypoint.sh
 
